@@ -1,0 +1,61 @@
+.navbar {
+  border-bottom: solid 1px rgba(255, 255, 255, 0.1);
+  color: white;
+  display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 90px;
+  padding: 2rem;
+  position: absolute;
+  width: 100%;
+}
+
+.navbar ul {
+  display: none;
+}
+
+@media screen and (min-width: 600px) {
+  .navbar {
+    gap: 2rem;
+  }
+  
+  .navbar .cart {
+    margin-left: auto;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .navbar {
+    padding: 0;
+    width: 80%;
+  }
+
+  .navbar .hamburger {
+    display: none;
+  }
+
+  .navbar ul {
+    display: flex;
+      align-items: center;
+    font-size: 13px;
+    font-weight: 700;
+    gap: 2.5rem;
+    height: 3rem;
+    letter-spacing: 2px;
+    line-height: 25px;
+    list-style: none;
+  }
+
+  .navbar li {
+    cursor: pointer;
+    padding: 1rem 0;
+  }
+
+  .navbar li:hover {
+    color: #D87D4A;
+  }
+
+  .navbar .cart {
+    margin: 0;
+  }
+}

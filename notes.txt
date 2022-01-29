@@ -1,0 +1,22 @@
+Date 1/26/22 1:59am
+
+PREVIOUSLY FINISHED:
+
+  Entire home page
+
+JUST FINISHED:
+
+  Home page active state styles
+
+To-do:
+
+  Set-up database to serve up product data
+  Build backend to serve up product json data, use params
+  
+  Pages: 
+    Product categories pages -> hardcode
+    Product details pages
+    
+  Build frontend Shopping cart component (modal)
+  Build frontend Checkout component (modal)
+  Build frontend OrderConfirmation component (modal)

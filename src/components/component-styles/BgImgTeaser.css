@@ -1,0 +1,64 @@
+.bg-img-teaser {
+  background: url(../../assets/home/mobile/image-speaker-zx7.jpg);
+  background-size: cover;
+  border-radius: 8px;
+  display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    filter: brightness(92.5%);
+  height: 320px;
+  padding: 1.5rem;
+  width: clamp(300px, 87.5%, 450px);
+}  
+
+.bg-img-teaser .title {
+  letter-spacing: 3px;
+}
+
+.bg-img-teaser button {
+  background: transparent;
+  border: solid 1px #FFFFFF;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+  height: 48px;
+  letter-spacing: 1px;
+  line-height: 18px;
+  width: 160px;
+}
+
+.bg-img-teaser button:hover {
+  background-color: black;
+  color: white;
+}
+
+@media screen and (min-width: 600px) {
+  .bg-img-teaser {
+    background: url(../../assets/home/tablet/image-speaker-zx7.jpg);
+    background-size: cover;
+    margin: 1.5rem 0;
+    padding: 4rem;
+    width: clamp(450px, 92.5%, 750px);
+  }
+
+  .bg-img-teaser button {
+    border-color: black;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .bg-img-teaser {
+    background: url('../../assets/home/desktop/image-speaker-zx7.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 3rem 0;
+    padding-left: 7rem;
+    width: clamp(900px, 80%, 1200px);
+  }
+
+  .bg-img-teaser .title {
+    font-size: 28px;
+    line-height: 38px;
+  }
+}
