@@ -6,6 +6,7 @@ import Footer from './Footer';
 
 // COMPONENTS
 import HeroBanner from './HeroBanner';
+import Navbar from './Navbar';
 import NavMenu from './NavMenu';
 import SplitTeaser from './SplitTeaser';
 import TallTeaser from './TallTeaser';
@@ -13,6 +14,7 @@ import TallTeaser from './TallTeaser';
 const Home = () => {
   return (
     <div className="home">
+      <Navbar />
       <HeroBanner />
       <NavMenu />
       <TallTeaser />

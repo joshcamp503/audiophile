@@ -9,6 +9,7 @@ JUST FINISHED:
   Home page active state styles
 
 To-do:
+  Conditionally render navbar background
 
   Set-up database to serve up product data
   Build backend to serve up product json data, use params
@@ -20,3 +21,10 @@ To-do:
   Build frontend Shopping cart component (modal)
   Build frontend Checkout component (modal)
   Build frontend OrderConfirmation component (modal)
+
+
+  ***PLANNING/SANDBOX****
+
+  Input db.json data into actual db
+  Fetch data from database
+  Use as state
