@@ -1,0 +1,32 @@
+.shopping {
+  width: 296px;
+}
+
+.shopping .price {
+  letter-spacing: 1.3px;
+  line-height: 24px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.shopping .add-to-cart {
+  display: flex;
+    gap: 1rem;
+  margin-top: 2rem;
+}
+
+.shopping .quantity-btn {
+  background-color: #F1F1F1;
+  color: black;
+  display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  font-size: 13px;
+  letter-spacing: 1px;
+  line-height: 18px;
+  width: 120px;
+}
+
+.shopping .plus-minus{
+  opacity: 0.25;
+}

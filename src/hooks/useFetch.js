@@ -1,12 +1,28 @@
 import { useState, useEffect } from "react"
+import { useParams } from "react-router-dom"
 
-export const useFetch = (url) => {
+export const useFetch = () => {
   const [data, setData] = useState(null)
   const [isPending, setIsPending] = useState(false)
   const [error, setError] = useState(null)
+  const params = useParams()
 
+  // create query string and add to url to fetch specific data
+  const createQueryString = () => {
+    let queryString = `?category=${params.category}`
+    if(params.slug) {
+      queryString += `&slug=${params.slug}`
+    }
+    return queryString
+  }
+
+  const queryString = createQueryString()
+  const url = 'http://localhost:3001/products' + queryString
+  
   useEffect(() => {
+    // abort controller for async data
     const controller = new AbortController()
+    console.log('useEffect fired')
 
     const fetchData = async () => {
       setIsPending(true)

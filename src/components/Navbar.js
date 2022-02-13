@@ -6,18 +6,20 @@ import hamburger from '../assets/shared/tablet/icon-hamburger.svg'
 import logo from '../assets/shared/desktop/logo.svg'
 import cart from '../assets/shared/desktop/icon-cart.svg'
 
+import { NavLink } from 'react-router-dom'
+
 const Navbar = () => {
   return (
     <nav className="navbar">
       <img src={hamburger} alt="hamburger" className="hamburger" />
-      <img src={logo} alt="logo" className="logo" />
+      <NavLink to={`/`} className="logo-link"><img src={logo} alt="logo" className="logo" /></NavLink>
       <ul className="navbar-menu">
-        <li>HOME</li>
-        <li>HEADPHONES</li>
-        <li>SPEAKERS</li>
-        <li>EARPHONES</li>
+        <NavLink to={`/`}>HOME</NavLink>
+        <NavLink to={`/products/headphones`}>HEADPHONES</NavLink>
+        <NavLink to={`/products/speakers`}>SPEAKERS</NavLink>
+        <NavLink to={`/products/earphones`}>EARPHONES</NavLink>
       </ul>
-      <img src={cart} alt="cart" className="cart" />
+      <NavLink to={`/`} className="cart-link"><img src={cart} alt="cart" className="cart" /></NavLink>
     </nav>
   )
 }

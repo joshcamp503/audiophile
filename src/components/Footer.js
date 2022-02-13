@@ -4,17 +4,21 @@ import './component-styles/Footer.css'
 // IMAGES
 import logo from '../assets/shared/desktop/logo.svg'
 
+// COMPONENTS
+import { NavLink } from 'react-router-dom';
+
+
 const Footer = () => {
   return (
     <div className="footer">
       <div className="top-line">
-        <img src={logo} alt="logo" className="logo" />
+      <NavLink to={`/`}><img src={logo} alt="logo" className="logo" /></NavLink>
         <nav className='main-nav'>
-          <ul className="nav-menu">
-            <li>HOME</li>
-            <li>HEADPHONES</li>
-            <li>SPEAKERS</li>
-            <li>EARPHONES</li>
+          <ul className="foot-nav">
+            <NavLink to={`/`}>HOME</NavLink>
+            <NavLink to={`/products/headphones`}>HEADPHONES</NavLink>
+            <NavLink to={`/products/speakers`}>SPEAKERS</NavLink>
+            <NavLink to={`/products/earphones`}>EARPHONES</NavLink>
           </ul>
         </nav>
       </div>
@@ -26,9 +30,15 @@ const Footer = () => {
         <p className="copyright">Copyright 2021. All Rights Reserved</p>
         <nav className='social-nav'>
           <ul className="social">
-            <li className='social-link facebook'></li>
-            <li className='social-link twitter'></li>
-            <li className='social-link instagram'></li>
+            <a href="http://www.facebook.com" className="external-nav" target="_blank">
+              <li className='social-link facebook'></li>
+            </a>
+            <a href="http://www.twitter.com" className="external-nav" target="_blank">
+              <li className='social-link twitter'></li>
+            </a>
+            <a href="http://www.instagram.com" className="external-nav" target="_blank">
+              <li className='social-link instagram'></li>
+            </a>
           </ul>
         </nav>
       </div>

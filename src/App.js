@@ -1,19 +1,21 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // COMPONENTS
-// import Navbar from "./components/Navbar";
+import ScrollToTop from "./components/ScrollToTop"
 import Home from "./components/Home";
+import ProductCategory from "./components/ProductCategory";
 import ProductDetails from "./components/ProductDetails";
 
 function App() {
+
   return (
     <div className="App">
       <BrowserRouter>
-        {/* <Navbar /> */}
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/product-details" element={<ProductDetails />} />
-          {/* <Route path=`/{product.category || product.id}` element={<ProductCategory />} /> */}
+          <Route path="/products/:category" element={<ProductCategory />} />
+          <Route path="/products/:category/:slug" element={<ProductDetails />} />
         </Routes>
       </BrowserRouter>
     </div>

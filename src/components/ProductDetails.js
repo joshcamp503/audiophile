@@ -2,41 +2,61 @@
 import './component-styles/ProductDetails.css'
 
 // HOOKS
-import { useParams } from 'react-router-dom';
-import { useFetch } from '../hooks/useFetch';
+import { useNavigate } from 'react-router-dom';
+import { useFetch } from '../hooks/useFetch'
 
 // COMPONENTS
-import { Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import Navbar from './Navbar';
 import Features from'./Features';
-import InTheBox from './InTheBox';
+import Includes from './Includes';
 import Gallery from './Gallery';
 import SimilarProducts from './SimilarProducts';
 import NavMenu from './NavMenu';
 import About from './About';
 import Footer from './Footer';
+import ProductOverview from './ProductOverview';
 
 const ProductDetails = () => {
-  const { param } = useParams()
-  const url = 'http://localhost3000/' + param
-  const { error, isPending, data}
+  const navigate = useNavigate()
+  const params = useParams()
+  const { data, isPending, error } = useFetch()
 
+  const isolateProduct = (data) => {
+    if(Array.isArray(data)) {
+      const [ item ] = data.filter(item => {
+        return item.slug === params.slug
+      })
+      return item
+    } else {
+      return data
+    }    
+  }
+  const product = isolateProduct(data)
 
   return (
     <div className="product-details">
       <Navbar />
-      <Link to="/" style={{textDecoration: 'none', color: 'black', opacity: '50%'}}>Go Back</Link>
-      <p className="price"></p>
-      <div className="add-container">
-        <div className="quantity">QUANTITY: #</div>
-        <button className="add-btn">ADD TO CART</button>
+      <div className="content">
+        <div className="navlink-container">
+          <button onClick={() => navigate(-1)}>Go Back</button>
+        </div>
+        {error && <p className="error">{error}</p>}
+        {isPending && <p className="loading"> Loading...</p>}
+        {(data && product) && 
+          <div className="async-container">
+            <ProductOverview data={data} params={params} />
+            <div className="feature-box">
+              <Features features={product.features} />
+              <Includes includes={product.includes}/>
+            </div>
+            <Gallery product={product}/>
+            <SimilarProducts product={product}/>
+          </div>
+        } 
+        <NavMenu />
+        <About />
       </div>
-      <Features />
-      <InTheBox />
-      <Gallery />
-      <SimilarProducts />
-      <NavMenu />
-      <About />
       <Footer />
     </div>
   )

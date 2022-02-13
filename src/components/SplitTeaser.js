@@ -1,18 +1,19 @@
 // STYLES
 import './component-styles/SplitTeaser.css'
 
-// IMAGES
-// import earphones from '../assets/home/mobile/image-earphones-yx1.jpg'
+// COMPONENTS
+import SeeProductButton from './SeeProductButton';
 
 const SplitTeaser = () => {
+  const productRoute = '/products/earphones/yx1-earphones'
+
   return (
     <div className="split-teaser">
-      {/* <img className="earphones-img" src={earphones} alt="earphones image" /> */}
       <div className="earphones-img"></div>
       <div className="card">
         <div className="card-content">
           <h1 className="title">YX1 EARPHONES</h1>
-          <button>SEE PRODUCT</button>
+          <SeeProductButton productRoute={productRoute} />
         </div>
       </div>
     </div>

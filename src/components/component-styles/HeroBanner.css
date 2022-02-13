@@ -1,6 +1,6 @@
 .hero-banner {
   background: url(/src/assets/home/mobile/image-header.jpg);
-  background-color: #1A1A1A;
+  background-color: #191919;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -62,14 +62,15 @@
 }
 
 /* TABLET MEDIA SIZING */
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 700px) {
   .hero-banner {
     background: url('../../assets/home/tablet/image-header.jpg');
-    background-color: #1A1A1A;
+    background-color: #191919;
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
     height: 729px;
+    margin-bottom: 5rem;
   }
 
   .advert {
@@ -88,12 +89,13 @@
 @media screen and (min-width: 1200px) {
   .hero-banner {
     background: url(/src/assets/home/desktop/image-hero.jpg);
-    background-color: #1A1A1A;
+    background-color: #191919;
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
     align-items: flex-start;
-    padding-left: 6rem;
+    margin-bottom: 7rem;
+    padding-left: 7rem;
   }
 
   .advert {

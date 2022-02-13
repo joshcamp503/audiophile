@@ -1,30 +1,20 @@
-Date 1/26/22 1:59am
+Date 2/12/22 6:38am
 
 PREVIOUSLY FINISHED:
 
-  Entire home page
+  Fully completed product detail pages
 
 JUST FINISHED:
 
-  Home page active state styles
+  Add/confirm all pre-shopping navigation
 
 To-do:
-  Conditionally render navbar background
-
-  Set-up database to serve up product data
-  Build backend to serve up product json data, use params
-  
-  Pages: 
-    Product categories pages -> hardcode
-    Product details pages
     
-  Build frontend Shopping cart component (modal)
-  Build frontend Checkout component (modal)
-  Build frontend OrderConfirmation component (modal)
+  
+  Add functionality to shopping cart quantity component
+  Build Shopping cart component
+  Build Checkout component
+  Build OrderConfirmation component
 
 
   ***PLANNING/SANDBOX****
-
-  Input db.json data into actual db
-  Fetch data from database
-  Use as state

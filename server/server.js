@@ -1,7 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose")
 const cors = require("cors");
-// const Router = require("./routes")
 const Product = require("./models/product")
 
 const app = express();
@@ -20,12 +19,23 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .catch((err) => console.log(err))
 
 // routes
+app.get('/products/:category?/:slug?', async (req, res) => {
+  Product.find(req.query)
+    .then((result) => {
+      console.log(req.query)
+      res.send(result)
+    })
+    .catch((err) => {
+      res.status(500).send(err)
+    })
+})
+
 app.get('/products', async (req, res) => {
   Product.find()
     .then((result) => {
       res.send(result)
     })
     .catch((err) => {
-      res.status(500).send(error)
+      res.status(500).send(err)
     })
 })

@@ -5,26 +5,27 @@ import './component-styles/NavMenu.css'
 import headphoneThumb from '../assets/shared/desktop/image-category-thumbnail-headphones.png'
 import speakerThumb from '../assets/shared/desktop/image-category-thumbnail-speakers.png'
 import earphoneThumb from '../assets/shared/desktop/image-category-thumbnail-earphones.png'
-import caret from '../assets/shared/desktop/icon-arrow-right.svg'
+
+// COMPONENTS
+import ShopLink from './ShopLink'
 
 const NavMenu = () => {
-
-return (
+  return (
     <div className='nav-menu'>
       <div className="nav-item">
         <img className='nav-img' id="headphones-thumb" src={headphoneThumb} alt="headphones thumbnail" />
         <h5 className='nav-title'>HEADPHONES</h5>
-        <button className='nav-btn'><span>SHOP</span><img src={caret} alt="caret" /></button>
+        <ShopLink route={'/products/headphones'} />
       </div>
       <div className="nav-item">
         <img className='nav-img' id="speakers-thumb" src={speakerThumb} alt="speaker thumbnail" />
         <h5 className='nav-title'>SPEAKERS</h5>
-        <button className='nav-btn'><span>SHOP</span><img src={caret} alt="caret" /></button>
+        <ShopLink route={'/products/speakers'} />
       </div>
       <div className="nav-item">
         <img className='nav-img' id="earphones-thumb" src={earphoneThumb} alt="earphones thumbnail" />
         <h5 className='nav-title'>EARPHONES</h5>
-        <button className='nav-btn'><span>SHOP</span><img src={caret} alt="caret" /></button>
+        <ShopLink route={'/products/earphones'} />
       </div>
     </div>
   )
