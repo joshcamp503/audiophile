@@ -20,6 +20,14 @@
   position: relative;
 }
 
+.navbar button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+}
+
 .navbar ul {
   display: none;
 }

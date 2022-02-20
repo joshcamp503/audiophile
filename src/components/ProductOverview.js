@@ -34,7 +34,7 @@ const ProductOverview = ({ data, params }) => {
       <h1 className={`headline ${product.category}`}>{product.name.toUpperCase()}</h1>
       <p className="sub-head">{product.description}</p>
       <SeeProductButton productRoute={productRoute}/>
-      <Shopping price={product.price} />
+      <Shopping price={product.price} product={product}/>
       </div>
     </div>
   )

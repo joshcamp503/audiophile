@@ -5,8 +5,13 @@ import ScrollToTop from "./components/ScrollToTop"
 import Home from "./components/Home";
 import ProductCategory from "./components/ProductCategory";
 import ProductDetails from "./components/ProductDetails";
+import CartMenu from "./components/CartMenu";
+
+// HOOKS
+import { useCart } from "./hooks/useCart";
 
 function App() {
+  const { showCart } = useCart()
 
   return (
     <div className="App">
@@ -18,6 +23,7 @@ function App() {
           <Route path="/products/:category/:slug" element={<ProductDetails />} />
         </Routes>
       </BrowserRouter>
+      {showCart && <CartMenu />}
     </div>
   );
 }

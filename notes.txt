@@ -1,18 +1,17 @@
 Date 2/12/22 6:38am
 
 PREVIOUSLY FINISHED:
-
-  Fully completed product detail pages
+  
+  Complete all pre-shopping navigation
 
 JUST FINISHED:
 
-  Add/confirm all pre-shopping navigation
+  Add-to-cart in localStorage functionality complete
 
 To-do:
-    
   
-  Add functionality to shopping cart quantity component
-  Build Shopping cart component
+  Build shopping cart component  
+  Update navbar cart image with quantity
   Build Checkout component
   Build OrderConfirmation component
 

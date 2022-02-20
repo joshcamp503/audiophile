@@ -7,8 +7,15 @@ import logo from '../assets/shared/desktop/logo.svg'
 import cart from '../assets/shared/desktop/icon-cart.svg'
 
 import { NavLink } from 'react-router-dom'
+import { useCart } from '../hooks/useCart'
 
 const Navbar = () => {
+  const { showCart, setShowCart } = useCart()
+
+  const handleClose = () => {
+    showCart ? setShowCart(false) : setShowCart(true)
+  }
+
   return (
     <nav className="navbar">
       <img src={hamburger} alt="hamburger" className="hamburger" />
@@ -19,7 +26,10 @@ const Navbar = () => {
         <NavLink to={`/products/speakers`}>SPEAKERS</NavLink>
         <NavLink to={`/products/earphones`}>EARPHONES</NavLink>
       </ul>
-      <NavLink to={`/`} className="cart-link"><img src={cart} alt="cart" className="cart" /></NavLink>
+      <button className="cart-btn" onClick={handleClose}>
+        <img src={cart} alt="cart" className="cart" />
+      </button>
+      {/* <NavLink to={`/`} className="cart-link"><img src={cart} alt="cart" className="cart" /></NavLink> */}
     </nav>
   )
 }

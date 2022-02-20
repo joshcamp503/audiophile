@@ -1,33 +1,18 @@
-.shopping {
-  width: 296px;
-}
-
-.shopping .price {
-  letter-spacing: 1.3px;
-  line-height: 24px;
-  font-size: 18px;
-  font-weight: 700;
-}
-
-.shopping .shopping-form {
-  display: flex;
-    gap: 1rem;
-  margin-top: 2rem;
-}
-
-.shopping .quantity-btn {
+.cart-menu .quantity-btn {
   background-color: #F1F1F1;
   color: black;
   display: flex;
     align-items: center;
     justify-content: space-evenly;
   font-size: 13px;
+  font-weight: 700;
+  height: 32px;
   letter-spacing: 1px;
   line-height: 18px;
-  width: 120px;
+  width: 96px;
 }
 
-.shopping .quantity-btn input {
+.cart-menu .quantity-btn input {
   background-color:#F1F1F1;
   border: none;
   text-align: center;
@@ -46,13 +31,16 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
-.shopping .plus-minus{
+.cart-menu .plus-minus{
   background: transparent;
+  border: none;
+  cursor: pointer;
   color: black;
   opacity: 0.25;
+  padding: 5px;
 }
 
-.shopping .quantity-btn:hover,
-.shopping .plus-minus:hover {
+.cart-menu .quantity-btn:hover,
+.cart-menu .plus-minus:hover {
   background-color: #F1F1F1;
 }
