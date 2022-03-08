@@ -1,0 +1,18 @@
+Date 2/24/22 9pm
+
+To-do:
+  
+  Finish OrderConfirmation component
+  Calculate shipping and VAT on checkout total
+  Add final active-state stylings
+
+JUST FINISHED:
+
+  showOrderConf functionality and navigation
+
+PREVIOUSLY FINISHED:
+
+  Update navbar cart image with quantity of cart items
+
+
+  ***PLANNING/SANDBOX****

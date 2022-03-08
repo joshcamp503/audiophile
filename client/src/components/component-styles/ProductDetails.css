@@ -1,0 +1,137 @@
+.product-details .navbar {
+  background-color: black;
+  position: relative;
+  width: 100%;
+}
+
+.product-details .content {
+  display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  padding: 1rem 1.5rem;
+}
+
+.product-details .navlink-container {
+  align-self: flex-start;
+}
+
+.product-details .navlink-container button {
+  background: none;
+  border: none;
+  color: black;
+  cursor: pointer;
+  font-size: 15px;
+  line-height: 25px;
+  opacity: 50%;
+  text-decoration: none;
+}
+
+.product-details .async-container {
+  display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.product-details .detail-img {
+  border-radius: 8px;
+  height: 327px;
+  width: 327px;
+}
+
+.product-details .product-overview .info {
+  text-align: left;
+  width: 327px;
+}
+
+.product-details .product-overview .headline {
+  margin-left: 0; 
+  margin-right: 8rem;
+}
+
+.product-details .product-overview .speakers{
+  margin-right: 10rem;
+}
+
+.product-details .product-overview .see-product {
+  display: none;
+}
+
+@media screen and (min-width: 700px) {
+  
+  .product-details .content {
+    padding: 1.5rem 2rem;
+  }
+
+  .product-details .product-overview {
+    flex-direction: row;
+    gap: 4rem;
+    width: clamp(450px, 100%, 690px)
+  }
+  
+  .product-details .detail-img {
+    height: 480px;
+    width: 281px;
+  }
+  
+  .product-details .product-overview .info {
+    margin: 0;
+    padding: 2rem 0;
+    margin-bottom: 1.5rem;
+    width: 340px;
+  }
+  
+  .product-details .product-overview .headline {
+    padding: 0;
+    margin-right: 4rem;
+  }
+  
+  .product-details .product-overview .speakers{
+    margin-right: 8rem;
+  }
+
+  @media screen and (min-width: 1200px) {
+    .product-details .navbar {
+      padding: 0 10rem;
+    }
+  
+    .product-details .content {
+      padding: 4rem 10rem;
+    }
+
+    .product-details .navlink-container {
+      margin-bottom: 1.5rem;
+    }
+  
+    .product-details .product-overview {
+      gap: 6rem;
+      justify-content: space-between;
+      width: 1110px;
+    }
+    
+    .product-details .product-overview .detail-img {
+      height: 560px;
+      width: 540px;
+    }
+    
+    .product-details .product-overview .info {
+      width: 445px;
+    }
+    
+    .product-details .product-overview .speakers{
+      padding-right: 10rem;
+    }
+
+    .product-details .product-overview .shopping .add-to-cart{
+      margin-top: 3rem;
+    }
+
+    .product-details .feature-box {
+      display: flex;
+        justify-content: space-between;
+      margin: 6rem 0;
+      width: 1110px;
+    }
+  }
+}

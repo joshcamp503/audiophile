@@ -1,0 +1,46 @@
+.cart-menu .quantity-btn {
+  background-color: #F1F1F1;
+  color: black;
+  display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  font-size: 13px;
+  font-weight: 700;
+  height: 32px;
+  letter-spacing: 1px;
+  line-height: 18px;
+  width: 96px;
+}
+
+.cart-menu .quantity-btn input {
+  background-color:#F1F1F1;
+  border: none;
+  text-align: center;
+  width: 2rem;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.cart-menu .plus-minus{
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: black;
+  opacity: 0.25;
+  padding: 5px;
+}
+
+.cart-menu .quantity-btn:hover,
+.cart-menu .plus-minus:hover {
+  background-color: #F1F1F1;
+}

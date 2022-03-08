@@ -1,0 +1,101 @@
+.order-summary {
+  background-color: white;
+  border-radius: 8px;
+  height: fit-content;
+  margin: auto;
+  margin-top: 1rem;
+  margin-bottom: 5rem;
+  padding: 1.5rem;
+  width: 327px;
+}
+
+.order-summary .cart-header h3 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 25px;
+}
+
+.order-summary .cart-contents {
+  margin: 1.5rem 0;
+}
+
+.cart-item {
+  display: flex;
+    align-items: center;
+  margin: 1.5rem 0;
+}
+
+.order-summary .cart-item img {
+  border-radius: 8px;
+  height: 64px;
+  width: 64px;
+}
+
+.order-summary .cart-item .item-info {
+  margin-left: 1rem;
+  margin-right: auto;
+}
+
+.order-summary .cart-item .item-info .item-name {
+  margin-bottom: 0.5rem;
+}
+
+.order-summary .cart-item .item-info .item-price {
+  opacity: 0.5;
+}
+
+.order-summary .total-display {
+  display: flex;
+    justify-content: space-between;
+}
+
+.order-summary .total-title {
+  font-size: 15px;
+  line-height: 25px;
+  opacity: 0.5;
+}
+
+.order-summary .total-amount {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 25px;
+}
+
+.order-summary .pay-btn {
+  background-color: #D87D4A;
+  border: none;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+  height: 48px;
+  letter-spacing: 1px;
+  line-height: 18px;
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+.order-summary .item-quantity {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 25px;
+  opacity: 0.5;
+}
+.order-summary .grand-total {
+  margin-left: 12px;
+}
+
+@media screen and (min-width: 700px) {
+  .order-summary {
+    width: 690px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .order-summary {
+    align-self: flex-start;
+    margin: 0;
+    padding: 2rem;
+    width: 350px;
+  }
+}
