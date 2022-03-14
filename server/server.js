@@ -15,7 +15,7 @@ const password = `mongodbpassword`
 // connect to mongodb
 const dbURI = `mongodb+srv://joshcamp503:mongodbpassword@cluster0.hogdo.mongodb.net/audiophile?retryWrites=true&w=majority`
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then((result) => app.listen(3001, () => console.log('connected')))
+  .then((result) => app.listen(process.env.port || 3001, () => console.log('connected')))
   .catch((err) => console.log(err))
 
 // routes
