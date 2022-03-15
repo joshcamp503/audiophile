@@ -2,10 +2,6 @@
 import "./component-styles/OrderSummary.css"
 
 // HOOKS
-import { useState } from "react"
-
-// COMPONENTS
-import OrderConfirmation from "./OrderConfirmation"
 import { useCart } from "../hooks/useCart"
 
 const OrderSummary = ({ cart }) => {
@@ -39,7 +35,7 @@ const OrderSummary = ({ cart }) => {
         {cart && cart.map(item => (
           <div className="cart-item" key={item.slug}>
             <div className="img-container">
-              <img src={require(`../assets/cart/image-${item.slug}.jpg`)} alt={`{product.slug} preview`}  />
+              <img src={require(`../assets/cart/image-${item.slug}.jpg`)} alt={`${item.slug} preview`}  />
             </div>
             <div className="item-info">
               <h5 className="item-name">{item.shortHand}</h5>
