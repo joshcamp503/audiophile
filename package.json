@@ -1,6 +1,6 @@
 {
-  "homepage": "https://joshcamp.dev/audiophile-ecommerce-website/",
-  "name": "audiophile-ecommerce-website",
+  "homepage": "https://joshcamp.dev/audiophile/",
+  "name": "audiophile",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

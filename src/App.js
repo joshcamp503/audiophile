@@ -17,7 +17,7 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
+      <BrowserRouter basename="/audiophile">
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
