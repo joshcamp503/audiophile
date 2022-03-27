@@ -32,7 +32,7 @@ const OrderSummary = ({ cart }) => {
     <div className="order-summary">
       <h3 className="cart-title">SUMMARY</h3>
       <div className="cart-contents">
-        {cart.map(item => (
+        {cart && cart.map(item => (
           <div className="cart-item" key={item.slug}>
             <div className="img-container">
               <img src={require(`../assets/cart/image-${item.slug}.jpg`)} alt={`${item.slug} preview`}  />
@@ -47,7 +47,7 @@ const OrderSummary = ({ cart }) => {
       </div>
       <div className="total-display">
         <h4 className="total-title">TOTAL:</h4>
-        <span className="total-amount">$ {total.toLocaleString()}</span>
+        <span className="total-amount">$ {total && total.toLocaleString()}</span>
       </div>
       <button className="pay-btn" onClick={handleClick}>
         PAY {total && <span className="grand-total"> $ {total.toLocaleString()}</span>}

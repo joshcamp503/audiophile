@@ -50,15 +50,7 @@ const Checkout = () => {
   return (
     <div className="checkout">
       <Navbar />
-      {error && <p className="error">{error}</p>}
-      {isPending && 
-      <ProgressBar 
-        className="loading" 
-        borderColor="#777777"
-        sliderColor="#d87d4a"
-        sliderBackground="#cccccc"
-      />}
-      {data &&  <div className="page">
+      <div className="page">
         <div className="navlink-container">
           <button onClick={handleClick}>Go Back</button>
         </div>
@@ -137,9 +129,17 @@ const Checkout = () => {
 
             </form>
           </div>
-          <OrderSummary cart={confirmedItems}/>
+          {error && <p className="error">{error}</p>}
+          {isPending && 
+          <ProgressBar 
+            className="loading" 
+            borderColor="#777777"
+            sliderColor="#d87d4a"
+            sliderBackground="#cccccc"
+          />}
+          {data && <OrderSummary cart={confirmedItems}/>}
         </div>
-      </div>}
+      </div>
       <Footer />
     </div>
   )

@@ -65,7 +65,7 @@ const CartMenu = () => {
         </div>
         <div className="total-display">
           <h4 className="total-title">TOTAL:</h4>
-          <span className="total-amount">$ {total.toLocaleString()}</span>
+          <span className="total-amount">$ {total && total.toLocaleString()}</span>
         </div>
         <button className="checkout-btn" onClick={() => {handleClick(cart); handleClose()}} >CHECKOUT</button>
       </div>
