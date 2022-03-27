@@ -40,6 +40,12 @@ input[type=number] {
   padding: 5px;
 }
 
+#plus:hover,
+#minus:hover {
+  color: #D87D4A;
+  opacity: 1;
+}
+
 .cart-menu .quantity-btn:hover,
 .cart-menu .plus-minus:hover {
   background-color: #F1F1F1;

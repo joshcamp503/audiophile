@@ -1,3 +1,19 @@
+.showNavMenu {
+  background-color: white;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  position: fixed;
+    top: 90px;
+    left: 0;
+    z-index: 1;
+  width: 100%;
+}
+
+.showNavMenu .nav-menu {
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+
 .nav-menu {
   display: flex;
     align-items: center;
@@ -72,6 +88,20 @@
     margin-top: 4rem;
     padding: 0;
     width: 690px;
+  }
+
+  .showNavMenu {
+    background-color: white;
+    position: fixed;
+      top: 90px;
+      left: 0;
+      z-index: 1;
+    width: 100%;
+  }
+
+  .showNavMenu .nav-menu {
+    margin: 4rem auto;
+    margin-top: 7rem;
   }
 
 

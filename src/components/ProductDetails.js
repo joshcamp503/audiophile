@@ -16,6 +16,7 @@ import NavMenu from './NavMenu';
 import About from './About';
 import Footer from './Footer';
 import ProductOverview from './ProductOverview';
+import { ProgressBar } from 'loading-animations-react';
 
 const ProductDetails = () => {
   const navigate = useNavigate()
@@ -42,7 +43,13 @@ const ProductDetails = () => {
           <button onClick={() => navigate(-1)}>Go Back</button>
         </div>
         {error && <p className="error">{error}</p>}
-        {isPending && <p className="loading"> Loading...</p>}
+        {isPending && 
+        <ProgressBar 
+          className="loading" 
+          borderColor="#777777"
+          sliderColor="#d87d4a"
+          sliderBackground="#cccccc"
+        />}
         {(data && product) && 
           <div className="async-container">
             <ProductOverview data={data} params={params} />

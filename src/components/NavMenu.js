@@ -11,7 +11,7 @@ import ShopLink from './ShopLink'
 
 const NavMenu = () => {
   return (
-    <div className='nav-menu'>
+    <div className="nav-menu">
       <div className="nav-item">
         <img className='nav-img' id="headphones-thumb" src={headphoneThumb} alt="headphones thumbnail" />
         <h5 className='nav-title'>HEADPHONES</h5>

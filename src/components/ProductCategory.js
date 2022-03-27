@@ -11,6 +11,7 @@ import NavMenu from './NavMenu';
 import About from './About';
 import Footer from './Footer';
 import ProductOverview from './ProductOverview';
+import { ProgressBar } from 'loading-animations-react';
 
 const ProductCategory = () => {
   const params = useParams()
@@ -20,9 +21,14 @@ const ProductCategory = () => {
   return (
     <div className="product-category">
       <Navbar />
-      {error && <p className="error">{error}</p>}
-      {isPending && <p className="loading"> Loading...</p>}
-      {data && <div className="header">{data[0].category.toUpperCase()}</div>}
+      {data && <div className="header">{data[0].category.toUpperCase()}</div>}{error && <p className="error">{error}</p>}
+      {isPending && 
+      <ProgressBar 
+        className="loading" 
+        borderColor="#777777"
+        sliderColor="#d87d4a"
+        sliderBackground="#cccccc"
+      />}
       {data && data
         .sort((a, b) => (a.new < b.new) ? 1 : -1)
         .map(product => (

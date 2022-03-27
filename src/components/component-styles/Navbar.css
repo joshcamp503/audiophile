@@ -1,4 +1,5 @@
 .navbar {
+  background-color: black;
   border-bottom: solid 1px rgba(255, 255, 255, 0.1);
   color: white;
   display: flex;
@@ -6,8 +7,13 @@
     justify-content: space-between;
     height: 90px;
   padding: 2rem;
-  position: absolute;
+  position: fixed;
+    z-index: 1;
   width: 100%;
+}
+
+.home .navbar {
+  background-color: #191919;
 }
 
 .navbar a {
@@ -16,7 +22,6 @@
 
 .product-category .navbar,
 .product-details .navbar {
-  background-color: black;
   position: relative;
 }
 
@@ -37,6 +42,23 @@
 
 .navbar ul {
   display: none;
+}
+
+.navbar .cart-btn:hover {
+  color: #D87D4A;
+}
+
+.navbar .cart-btn:hover > .cart {
+  background: #D87D4A;
+}
+
+.navbar .cart {
+  background: white;
+  cursor: pointer;
+  mask-size: cover;
+  height: 20px;
+  width: 23px;
+  mask: url(../../assets/shared/desktop/icon-cart.svg);
 }
 
 @media screen and (min-width: 700px) {
@@ -90,11 +112,8 @@
     color: #D87D4A;
   }
 
-  .navbar .cart-link {
-    width: 143px;
-  }
-
   .navbar .cart {
     margin-left: auto;
   }
+
 }

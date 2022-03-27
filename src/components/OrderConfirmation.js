@@ -3,11 +3,11 @@ import "./component-styles/OrderConfirmation.css"
 
 // HOOKS
 import { useNavigate } from "react-router-dom"
-import { useCart } from "../hooks/useCart"
+import { useNavbar } from "../hooks/useNavbar"
 
 const OrderConfirmation = () => {
   const navigate = useNavigate()
-  const { setShowOrderConf } = useCart()
+  const { setShowOrderConf } = useNavbar()
 
   const handleClick = () => {
     setShowOrderConf(false)
@@ -22,9 +22,9 @@ const OrderConfirmation = () => {
 
         <div className="thanks">
           <h3 className="thanks1">THANK YOU</h3>
-          <h3 className="thanks2">FOR YOUR ORDER</h3>
+          <h3 className="thanks2">FOR VISITING</h3>
         </div>
-        <p className="sub-head">You will receive an email confirmation shortly.</p>
+        <p className="sub-head">This is a mock website. No payment has been taken.  You will not be charged for anything, no products will be shipped to you, and the information you entered has been safely deleted.</p>
         
         <div className="cart-summary-card">
           <div className="top-item">
@@ -36,7 +36,7 @@ const OrderConfirmation = () => {
             <span className="item-quantity">x{item.quantity}</span> */}
           </div>
           <div className="grand-total-container">
-            <h5 className="grand-title">GRAND TOTAL</h5>
+            <h5 className="grand-title">HAVE A NICE DAY!</h5>
             {/* <p className="grand-total">${item.price}</p> */}
           </div>
         </div>

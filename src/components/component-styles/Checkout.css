@@ -47,8 +47,6 @@
 }
 
 .checkout form {
-  /* display: flex;
-    flex-direction: column; */
   width: 100%;
 }
 
@@ -93,6 +91,10 @@
   padding: 1rem;
 }
 
+.checkout input[type="text"]:focus {
+  outline: solid 1px #D87D4A;
+}
+
 ::placeholder {
   font-size: 12px;
   letter-spacing: -0.25px;
@@ -118,8 +120,12 @@
   margin-left: 1rem;
 }
 
+.checkout input[type="radio"] {
+  accent-color: #D87D4A;
+}
+
 .checkout .active {
-  border: solid 2px #D87D4A;
+  border: solid 1px #D87D4A;
 }
 
 @media screen and (min-width: 700px) {

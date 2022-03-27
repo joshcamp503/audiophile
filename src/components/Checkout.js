@@ -10,6 +10,7 @@ import { useState } from "react"
 import Navbar from "./Navbar"
 import Footer from "./Footer"
 import OrderSummary from "./OrderSummary"
+import { ProgressBar } from 'loading-animations-react';
 
 
 const Checkout = () => {
@@ -49,7 +50,15 @@ const Checkout = () => {
   return (
     <div className="checkout">
       <Navbar />
-      <div className="page">
+      {error && <p className="error">{error}</p>}
+      {isPending && 
+      <ProgressBar 
+        className="loading" 
+        borderColor="#777777"
+        sliderColor="#d87d4a"
+        sliderBackground="#cccccc"
+      />}
+      {data &&  <div className="page">
         <div className="navlink-container">
           <button onClick={handleClick}>Go Back</button>
         </div>
@@ -106,12 +115,12 @@ const Checkout = () => {
               <div className="payment-details">
                 <label htmlFor="payment">Payment Method</label>
                 <div className={`radio-container e-money-container ${active ? "" : "active"}`}>
-                  <input id="e-money" type="radio" name="payment" checked={active==0} onChange={() => setActive(0)} />
+                  <input id="e-money" type="radio" name="payment" checked={active===0} onChange={() => setActive(0)} />
                   <label htmlFor="eMoney">e-Money</label>
                 </div>
 
                 <div className={`radio-container cod-container ${active ? "active" : ""}`}>
-                  <input id="cod" type="radio" name="payment" checked={active==1} onChange={() => setActive(1)} />
+                  <input id="cod" type="radio" name="payment" checked={active===1} onChange={() => setActive(1)} />
                   <label htmlFor="cod">Cash on Delivery</label>
                 </div>
 
@@ -130,7 +139,7 @@ const Checkout = () => {
           </div>
           <OrderSummary cart={confirmedItems}/>
         </div>
-      </div>
+      </div>}
       <Footer />
     </div>
   )

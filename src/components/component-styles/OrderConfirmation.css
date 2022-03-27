@@ -58,3 +58,7 @@
   letter-spacing: 1px;
   line-height: 18px;
 }
+
+.order-confirmation button:hover {
+  background-color: #FBAF85;
+}

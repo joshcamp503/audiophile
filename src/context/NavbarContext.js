@@ -1,10 +1,13 @@
 import { createContext, useReducer } from "react"
 
 
-export const CartContext = createContext()
+export const NavbarContext = createContext()
 
-const CartReducer = (state, action) => {
+const NavbarReducer = (state, action) => {
   switch (action.type) {
+    case 'SHOW_NAVMENU':
+      console.log(action.payload)
+      return { ...state, showNavMenu: action.payload }
     case 'SHOW_CART':
       return { ...state, showCart: action.payload }
     case 'UPDATE_CART_SIZE':
@@ -16,7 +19,7 @@ const CartReducer = (state, action) => {
   }
 }
 
-export function CartProvider({ children }) {
+export function NavbarProvider({ children }) {
 
   const cart = JSON.parse(localStorage.getItem("cart"))
   const calcCartSize = (cart) => {
@@ -29,11 +32,16 @@ export function CartProvider({ children }) {
 
   const initialState = {
     cartSize: initialCartSize,
+    showNavMenu: false,
     showCart: false,
     showOrderConf: false
   }
 
-  const [state, dispatch] = useReducer(CartReducer, initialState)
+  const [state, dispatch] = useReducer(NavbarReducer, initialState)
+
+  const setShowNavMenu = (showNavMenu) => {
+    dispatch({ type: 'SHOW_NAVMENU', payload: showNavMenu})
+  }
 
   const setShowCart = (showCart) => {
     dispatch({ type: 'SHOW_CART', payload: showCart})
@@ -49,8 +57,8 @@ export function CartProvider({ children }) {
   }
 
   return (
-    <CartContext.Provider value={{...state, setShowCart, setShowOrderConf, setCartSize}}>
+    <NavbarContext.Provider value={{...state, setShowNavMenu, setShowCart, setShowOrderConf, setCartSize}}>
       {children}
-    </CartContext.Provider>
+    </NavbarContext.Provider>
   )
 }

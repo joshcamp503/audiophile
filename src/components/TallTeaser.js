@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom';
-
 // STYLES
 import './component-styles/TallTeaser.css'
 import SeeProductButton from './SeeProductButton';

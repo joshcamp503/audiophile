@@ -27,6 +27,11 @@
   text-decoration: none;
 }
 
+.product-details .navlink-container button:hover {
+  color: #D87D4A;
+  opacity: 1;
+}
+
 .product-details .async-container {
   display: flex;
     align-items: center;

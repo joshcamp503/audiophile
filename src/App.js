@@ -10,10 +10,10 @@ import Checkout from "./components/Checkout";
 import OrderConfirmation from "./components/OrderConfirmation";
 
 // HOOKS
-import { useCart } from "./hooks/useCart";
+import { useNavbar } from "./hooks/useNavbar";
 
 function App() {
-  const { showCart, showOrderConf } = useCart()
+  const { showCart, showOrderConf } = useNavbar()
 
   return (
     <div className="App">

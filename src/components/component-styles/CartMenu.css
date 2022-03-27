@@ -49,6 +49,11 @@
   opacity: 0.5;
 }
 
+.cart-header .remove-all:hover {
+  color: #D87D4A;
+  opacity: 1;
+}
+
 .cart-menu .cart-contents {
   margin: 1.5rem 0;
 }
@@ -107,6 +112,10 @@
   line-height: 18px;
   margin-top: 1.5rem;
   width: 100%;
+}
+
+.cart-menu .checkout-btn:hover {
+  background-color: #FBAF85;
 }
 
 @media screen and (min-width: 700px) {

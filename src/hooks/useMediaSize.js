@@ -3,8 +3,10 @@
 // Change images at media breakpoints
 
 import { useState, useLayoutEffect } from "react";
+import { useNavbar } from "./useNavbar";
 
 export const useMediaSize = () => {
+  const { setShowNavMenu } = useNavbar()
   // determine current device for initial state
   const getCurrentDevice = () => {
     const deviceWidth = window.innerWidth
@@ -45,6 +47,7 @@ export const useMediaSize = () => {
             setMediaSize('tablet')
             return
           case '(min-width: 1200px)':
+            setShowNavMenu(false)
             setMediaSize('desktop')
             return
           default:
@@ -71,7 +74,7 @@ export const useMediaSize = () => {
       isMounted = false
     }
 
-    }, [mediaSize])
+    }, [mediaSize, setShowNavMenu])
   
   
   return mediaSize

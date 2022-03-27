@@ -5,7 +5,7 @@ import './component-styles/CartMenu.css'
 import Quantity from './Quantity'
 
 // HOOKS
-import { useCart } from '../hooks/useCart'
+import { useNavbar } from '../hooks/useNavbar'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
@@ -15,7 +15,7 @@ const CartMenu = () => {
     navigate('/checkout')
   }
 
-  const { showCart, setShowCart, setCartSize } = useCart()
+  const { showCart, setShowCart, setCartSize } = useNavbar()
   const handleClose = () => {
     showCart ? setShowCart(false) : setShowCart(true)
   }
@@ -57,7 +57,7 @@ const CartMenu = () => {
               </div>
               <div className="item-info">
                 <h5 className="item-name">{item.shortHand}</h5>
-                <p className="item-price">${item.price}</p>
+                <p className="item-price">${item.price.toLocaleString()}</p>
               </div>
               <Quantity quantity={item.quantity}/>
             </div>
@@ -65,7 +65,7 @@ const CartMenu = () => {
         </div>
         <div className="total-display">
           <h4 className="total-title">TOTAL:</h4>
-          <span className="total-amount">$ {total}</span>
+          <span className="total-amount">$ {total.toLocaleString()}</span>
         </div>
         <button className="checkout-btn" onClick={() => {handleClick(cart); handleClose()}} >CHECKOUT</button>
       </div>

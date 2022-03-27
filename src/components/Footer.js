@@ -30,13 +30,13 @@ const Footer = () => {
         <p className="copyright">Copyright 2021. All Rights Reserved</p>
         <nav className='social-nav'>
           <ul className="social">
-            <a href="http://www.facebook.com" className="external-nav" target="_blank">
+            <a href="http://www.facebook.com" className="external-nav" target="_blank" rel="noreferrer">
               <li className='social-link facebook'></li>
             </a>
-            <a href="http://www.twitter.com" className="external-nav" target="_blank">
+            <a href="http://www.twitter.com" className="external-nav" target="_blank" rel="noreferrer">
               <li className='social-link twitter'></li>
             </a>
-            <a href="http://www.instagram.com" className="external-nav" target="_blank">
+            <a href="http://www.instagram.com" className="external-nav" target="_blank" rel="noreferrer">
               <li className='social-link instagram'></li>
             </a>
           </ul>

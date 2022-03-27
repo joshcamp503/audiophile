@@ -4,21 +4,31 @@ import './component-styles/Navbar.css'
 // IMAGES
 import hamburger from '../assets/shared/tablet/icon-hamburger.svg'
 import logo from '../assets/shared/desktop/logo.svg'
-import cart from '../assets/shared/desktop/icon-cart.svg'
 
+// COMPONENTS
 import { NavLink } from 'react-router-dom'
-import { useCart } from '../hooks/useCart'
+
+// HOOKS
+import { useMediaSize } from '../hooks/useMediaSize'
+import { useNavbar } from '../hooks/useNavbar'
 
 const Navbar = () => {
-  const { showCart, setShowCart, cartSize } = useCart()
+  const { showNavMenu, setShowNavMenu, showCart, setShowCart, cartSize } = useNavbar()
 
   const handleClose = () => {
     showCart ? setShowCart(false) : setShowCart(true)
   }
 
+  const handleBurger = () => {
+    showNavMenu ? setShowNavMenu(false) : setShowNavMenu(true)
+  }
+
+  // useMediaSize automatically hides burger menu when browser changes to desktop width (min 1200px)
+  useMediaSize()
+
   return (
     <nav className="navbar">
-      <img src={hamburger} alt="hamburger" className="hamburger" />
+      <img src={hamburger} alt="hamburger" className="hamburger" onClick={handleBurger}/>
       <NavLink to={`/`} className="logo-link"><img src={logo} alt="logo" className="logo" /></NavLink>
       <ul className="navbar-menu">
         <NavLink to={`/`}>HOME</NavLink>
@@ -27,7 +37,7 @@ const Navbar = () => {
         <NavLink to={`/products/earphones`}>EARPHONES</NavLink>
       </ul>
       <button className="cart-btn" onClick={handleClose}>
-        <img src={cart} alt="cart" className="cart" />
+        <div className="cart"></div>
         {cartSize && `(${cartSize})`}
       </button>
     </nav>

@@ -25,3 +25,8 @@ html, body {
     flex-direction: column;
   position: relative;
 }
+
+.loading {
+  color: rgba(0, 0, 0, 0.5);
+  margin: 8rem;
+}

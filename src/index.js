@@ -2,13 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import { CartProvider } from './context/CartContext';
+import { NavbarProvider } from './context/NavbarContext';
 
 ReactDOM.render(
   <React.StrictMode>
-    <CartProvider>
+    <NavbarProvider>
       <App />
-    </CartProvider>
+    </NavbarProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

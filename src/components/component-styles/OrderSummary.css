@@ -75,6 +75,10 @@
   width: 100%;
 }
 
+.order-summary .pay-btn:hover {
+  background-color: #FBAF85;
+}
+
 .order-summary .item-quantity {
   font-size: 15px;
   font-weight: 700;

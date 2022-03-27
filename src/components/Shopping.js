@@ -3,11 +3,11 @@ import "./component-styles/Shopping.css"
 
 // HOOKS
 import { useRef } from "react"
-import { useCart } from "../hooks/useCart"
+import { useNavbar } from "../hooks/useNavbar"
 
 
 const Shopping = ({ price, product }) => {
-  const { setCartSize } = useCart()
+  const { setCartSize } = useNavbar()
 
   const inputRef = useRef()
 
