@@ -9,23 +9,23 @@ import earphoneThumb from '../assets/shared/desktop/image-category-thumbnail-ear
 // COMPONENTS
 import ShopLink from './ShopLink'
 
-const NavMenu = () => {
+const NavMenu = ({ closeNav }) => {
   return (
     <div className="nav-menu">
       <div className="nav-item">
         <img className='nav-img' id="headphones-thumb" src={headphoneThumb} alt="headphones thumbnail" />
         <h5 className='nav-title'>HEADPHONES</h5>
-        <ShopLink route={'/products/headphones'} />
+        <ShopLink route={'/products/headphones'} closeNav={closeNav} />
       </div>
       <div className="nav-item">
         <img className='nav-img' id="speakers-thumb" src={speakerThumb} alt="speaker thumbnail" />
         <h5 className='nav-title'>SPEAKERS</h5>
-        <ShopLink route={'/products/speakers'} />
+        <ShopLink route={'/products/speakers'} closeNav={closeNav} />
       </div>
       <div className="nav-item">
         <img className='nav-img' id="earphones-thumb" src={earphoneThumb} alt="earphones thumbnail" />
         <h5 className='nav-title'>EARPHONES</h5>
-        <ShopLink route={'/products/earphones'} />
+        <ShopLink route={'/products/earphones'} closeNav={closeNav} />
       </div>
     </div>
   )

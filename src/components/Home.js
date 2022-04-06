@@ -11,16 +11,11 @@ import NavMenu from './NavMenu';
 import SplitTeaser from './SplitTeaser';
 import TallTeaser from './TallTeaser';
 
-// HOOKS
-import { useNavbar } from '../hooks/useNavbar';
-
 const Home = () => {
-  const { showNavMenu } = useNavbar() 
 
   return (
     <div className="home">
       <Navbar />
-      {showNavMenu && <div className="showNavMenu"><NavMenu /></div>}
       <HeroBanner />
       <NavMenu />
       <TallTeaser />

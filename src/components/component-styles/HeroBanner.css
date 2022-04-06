@@ -95,11 +95,11 @@
     background-size: contain;
     align-items: flex-start;
     margin-bottom: 7rem;
-    padding-left: 7rem;
   }
 
   .advert {
     margin-top: 90px;
+    margin-left: 7rem;
     text-align: left;
   }
 

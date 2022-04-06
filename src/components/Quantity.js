@@ -35,7 +35,9 @@ const Quantity = ({ quantity }) => {
         defaultValue={quantity ? quantity : "1"}
         min="1" 
         max="100" 
-        onChange={e => setValue(e)}
+        onChange={e => {
+          setValue(e)
+        }}
         required 
       />
       <button className="plus-minus" id="plus"  onClick={increment}>+</button>

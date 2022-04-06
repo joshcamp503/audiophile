@@ -4,28 +4,13 @@ import "./component-styles/Shopping.css"
 // HOOKS
 import { useRef } from "react"
 import { useNavbar } from "../hooks/useNavbar"
+import Quantity from "./Quantity"
 
 
 const Shopping = ({ price, product }) => {
   const { setCartSize } = useNavbar()
 
   const inputRef = useRef()
-
-  const setValue = (e) => {
-    inputRef.current.value = e.target.value
-  }
-
-  const increment = (e) => {
-    e.preventDefault()
-    if(inputRef.current.value >= 99) return false
-    inputRef.current.value++
-  }
-
-  const decrement = (e) => {
-    e.preventDefault()
-    if(inputRef.current.value <= 1) return false
-    inputRef.current.value--
-  }
 
   const cartHasItem = (cart) => {
     return cart.some(item => {
@@ -84,21 +69,7 @@ const Shopping = ({ price, product }) => {
       <p className="price">$ {price.toLocaleString()}</p>
       <div className="add-container">
         <form className="shopping-form" onSubmit={handleSubmit}>
-          <div className="quantity-btn">
-            <button className="plus-minus" id="minus"  onClick={decrement}>-</button>
-            <input 
-              className="quantity-input" 
-              id="amount" 
-              type="number" 
-              ref={inputRef}
-              defaultValue="1"
-              min="1" 
-              max="100" 
-              onChange={e => setValue(e)}
-              required 
-            />
-            <button className="plus-minus" id="plus"  onClick={increment}>+</button>
-          </div>
+          <Quantity />
           <button className="add-btn">ADD TO CART</button>
         </form>
       </div>    

@@ -11,9 +11,14 @@ import OrderConfirmation from "./components/OrderConfirmation";
 
 // HOOKS
 import { useNavbar } from "./hooks/useNavbar";
+import NavMenu from "./components/NavMenu";
 
 function App() {
-  const { showCart, showOrderConf } = useNavbar()
+  const { setShowNavMenu, showNavMenu, showCart, showOrderConf } = useNavbar()
+
+  const closeNav = () => {
+    setShowNavMenu(false)
+  }
 
   return (
     <div className="App">
@@ -25,6 +30,7 @@ function App() {
           <Route path="/products/:category/:slug" element={<ProductDetails />} />
           <Route path="/checkout" element={<Checkout />} />
         </Routes>
+        {showNavMenu && <div className="showNavMenu"><NavMenu closeNav={closeNav} /></div>}
         {showCart && <CartMenu />}
         {showOrderConf && <OrderConfirmation />}
       </BrowserRouter>

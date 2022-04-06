@@ -1,14 +1,9 @@
-.product-details .navbar {
-  background-color: black;
-  position: relative;
-  width: 100%;
-}
-
 .product-details .content {
   display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
+  margin-top: 90px;
   padding: 1rem 1.5rem;
 }
 
