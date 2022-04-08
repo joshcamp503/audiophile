@@ -1,11 +1,11 @@
 // STYLES
 import "./component-styles/Quantity.css"
 
-
 // HOOKS
 import { useRef } from "react"
 
 const Quantity = ({ quantity }) => {
+
   const inputRef = useRef()
 
   const setValue = (e) => {
@@ -25,7 +25,7 @@ const Quantity = ({ quantity }) => {
   }
 
   return (
-    <div className="quantity-btn">
+    <div className="quantity-btn" >
       <button className="plus-minus" id="minus"  onClick={decrement}>-</button>
       <input 
         className="quantity-input" 

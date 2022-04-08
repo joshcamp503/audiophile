@@ -15,7 +15,6 @@ import { ProgressBar } from 'loading-animations-react';
 
 const Checkout = () => {
   const { data, isPending, error } = useFetch()
-  const cart = JSON.parse(localStorage.getItem("cart"))
 
   // go back button logic
   const navigate = useNavigate()
@@ -23,29 +22,8 @@ const Checkout = () => {
     navigate(-1)
   }
 
-  // Radio button active state logic
+  // Radio button active-state logic
   const [active, setActive] = useState(0)
-  
-  // compare cart to items in database and pull appropriate product
-  // data from the database for security
-  const confirmCartItems = (cart, data) => {
-    // wait for the data
-    if(!data) return false
-    if(!cart) return false
-    // check each item in cart
-    const newCart = cart.map(item => {
-      // return matching item from database
-      const confirmedItem = data.find(element => {
-        return element.slug === item.slug
-      })
-      // add quantity value to item
-      confirmedItem.quantity = item.quantity
-      return confirmedItem
-    })
-    return newCart
-  }
-
-  const confirmedItems = confirmCartItems(cart, data)
 
   return (
     <div className="checkout">
@@ -137,7 +115,7 @@ const Checkout = () => {
             sliderColor="#d87d4a"
             sliderBackground="#cccccc"
           />}
-          {data && <OrderSummary cart={confirmedItems}/>}
+          {data && <OrderSummary />}
         </div>
       </div>
       <Footer />

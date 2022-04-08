@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { NavbarContext } from "../context/NavbarContext";
+import { CartContext } from "../context/CartContext";
 
-export const useNavbar = () => {
-  const context = useContext(NavbarContext)
+export const useCart = () => {
+  const context = useContext(CartContext)
 
   if(context === undefined) {
     throw new Error('useCart must be used inside a CartProvider')
@@ -10,3 +10,4 @@ export const useNavbar = () => {
 
   return context
 }
+// 

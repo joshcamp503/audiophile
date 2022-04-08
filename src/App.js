@@ -16,12 +16,13 @@ import NavMenu from "./components/NavMenu";
 function App() {
   const { setShowNavMenu, showNavMenu, showCart, showOrderConf } = useNavbar()
 
-  const closeNav = () => {
+  const closeNav = (e) => {
+    if(e.target.classList.contains('nav')) return false
     setShowNavMenu(false)
   }
 
   return (
-    <div className="App">
+    <div className="App" onClick={closeNav}>
       <BrowserRouter basename="/audiophile">
         <ScrollToTop />
         <Routes>
@@ -30,7 +31,7 @@ function App() {
           <Route path="/products/:category/:slug" element={<ProductDetails />} />
           <Route path="/checkout" element={<Checkout />} />
         </Routes>
-        {showNavMenu && <div className="showNavMenu"><NavMenu closeNav={closeNav} /></div>}
+        {showNavMenu && <div className="nav showNavMenu"><NavMenu closeNav={closeNav} /></div>}
         {showCart && <CartMenu />}
         {showOrderConf && <OrderConfirmation />}
       </BrowserRouter>

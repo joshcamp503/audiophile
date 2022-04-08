@@ -3,9 +3,11 @@ import "./component-styles/OrderSummary.css"
 
 // HOOKS
 import { useNavbar } from "../hooks/useNavbar"
+import { useCart } from "../hooks/useCart"
 
-const OrderSummary = ({ cart }) => {
+const OrderSummary = () => {
   const { setShowOrderConf } = useNavbar()
+  const { cart, cartTotal } = useCart()
 
   const checkFormData = (formDate) => {
     console.log('form data function goes here')
@@ -16,17 +18,6 @@ const OrderSummary = ({ cart }) => {
     window.scrollTo(0, 0)
     setShowOrderConf(true)
   }
-
-  const cartTotal = () => {
-    if(!cart) return false
-    const initialValue = 0;
-    const total = cart.reduce((prevItem, currentItem) => {
-      return prevItem + (currentItem.price * currentItem.quantity)
-    }, initialValue)
-    return total
-  }
-
-  const total = cartTotal()
 
   return (
     <div className="order-summary">
@@ -47,10 +38,10 @@ const OrderSummary = ({ cart }) => {
       </div>
       <div className="total-display">
         <h4 className="total-title">TOTAL:</h4>
-        <span className="total-amount">$ {total && total.toLocaleString()}</span>
+        <span className="total-amount">$ {cartTotal && cartTotal.toLocaleString()}</span>
       </div>
       <button className="pay-btn" onClick={handleClick}>
-        PAY {total && <span className="grand-total"> $ {total.toLocaleString()}</span>}
+        PAY {cartTotal && <span className="grand-total"> $ {cartTotal.toLocaleString()}</span>}
       </button>
     </div>
   )

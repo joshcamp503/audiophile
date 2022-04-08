@@ -91,7 +91,10 @@
   padding: 1rem;
 }
 
-.checkout input[type="text"]:focus {
+.checkout input[type="text"]:focus, 
+.checkout input[type="email"]:focus,
+.checkout input[type="tel"]:focus,  
+.checkout input[type="number"]:focus {
   outline: solid 1px #D87D4A;
 }
 

@@ -11,15 +11,22 @@ import { NavLink } from 'react-router-dom'
 // HOOKS
 import { useMediaSize } from '../hooks/useMediaSize'
 import { useNavbar } from '../hooks/useNavbar'
+import { useCart } from '../hooks/useCart'
 
 const Navbar = () => {
-  const { showNavMenu, setShowNavMenu, showCart, setShowCart, cartSize } = useNavbar()
+  const { cartSize } = useCart()
+  const { showNavMenu, setShowNavMenu, showCart, setShowCart } = useNavbar()
 
-  const handleClose = () => {
+  const toggleCart = () => {
     showCart ? setShowCart(false) : setShowCart(true)
   }
 
+  const closeCart = () => {
+    setShowCart(false)
+  }
+
   const handleBurger = () => {
+    closeCart()
     showNavMenu ? setShowNavMenu(false) : setShowNavMenu(true)
   }
 
@@ -27,18 +34,18 @@ const Navbar = () => {
   useMediaSize()
 
   return (
-    <nav className="navbar">
-      <img src={hamburger} alt="hamburger" className="hamburger" onClick={handleBurger}/>
-      <NavLink to={`/`} className="logo-link"><img src={logo} alt="logo" className="logo" /></NavLink>
-      <ul className="navbar-menu">
+    <nav className="nav navbar">
+      <img src={hamburger} alt="hamburger" className="nav hamburger" onClick={handleBurger}/>
+      <NavLink to={`/`} className="logo-link"  onClick={closeCart} ><img src={logo} alt="logo" className="nav logo"/></NavLink>
+      <ul className="nav navbar-menu" onClick={closeCart} >
         <NavLink to={`/`}>HOME</NavLink>
         <NavLink to={`/products/headphones`}>HEADPHONES</NavLink>
         <NavLink to={`/products/speakers`}>SPEAKERS</NavLink>
         <NavLink to={`/products/earphones`}>EARPHONES</NavLink>
       </ul>
-      <button className="cart-btn" onClick={handleClose}>
+      <button className="cart-btn" onClick={toggleCart}>
         <div className="cart"></div>
-        {cartSize && `(${cartSize})`}
+        {(cartSize > 0) && `(${cartSize})`}
       </button>
     </nav>
   )
