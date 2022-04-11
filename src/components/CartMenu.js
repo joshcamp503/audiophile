@@ -50,8 +50,6 @@ const CartMenu = () => {
     for (const value of inputList.values()) {
       newQuantities.push(value.value)
     }
-    console.log(cart)
-    console.log('fired')
     
     cart.forEach((item, index) => {
       updateQuantity(cart, item, newQuantities[index], { addOn: false })

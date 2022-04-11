@@ -8,7 +8,7 @@
 }
 
 .product-details .navlink-container {
-  align-self: flex-start;
+  width: 327px;
 }
 
 .product-details .navlink-container button {
@@ -64,6 +64,10 @@
     padding: 1.5rem 2rem;
   }
 
+  .product-details .navlink-container {
+    width: clamp(450px, 100%, 690px)
+  }
+
   .product-details .product-overview {
     flex-direction: row;
     gap: 4rem;
@@ -94,14 +98,16 @@
   @media screen and (min-width: 1200px) {
     .product-details .navbar {
       padding: 0 10rem;
+      width: 100%;
     }
   
     .product-details .content {
-      padding: 4rem 10rem;
+      padding: 4rem 0;
     }
 
     .product-details .navlink-container {
       margin-bottom: 1.5rem;
+      width: 1110px;
     }
   
     .product-details .product-overview {

@@ -59,6 +59,7 @@ export const useMediaSize = () => {
       // returns mediaQueryList object with "onchange" functionality
       // change state when "onchange" fires
       matchMedia(currentMedia).onchange = () => {
+        console.log('onchange!')
         const newMedia = queries.find(query => {
           return window.matchMedia(query).matches
         })
