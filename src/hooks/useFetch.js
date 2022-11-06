@@ -18,10 +18,11 @@ export const useFetch = () => {
   }
 
   const queryString = createQueryString()
-  const url =  'https://audiophile-server-api.herokuapp.com/products' + queryString
+  // DEPLOYED URL
+  // const url =  'https://audiophile-server-api.herokuapp.com/products' + queryString
   
   // DEVELOPMENT URL
-  // 'http://localhost:3001/products'
+  const url = 'http://localhost:3001/products' + queryString
   
   useEffect(() => {
     // abort controller for async data

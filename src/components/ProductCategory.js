@@ -22,7 +22,7 @@ const ProductCategory = () => {
     <div className="product-category">
       <Navbar />
       {data && <div className="header">{data[0].category.toUpperCase()}</div>}
-        {error && <p className="error">{error}</p>}
+      {error && <p className="error">{error}</p>}
       {isPending && 
       <ProgressBar 
         className="loading" 
