@@ -21,6 +21,10 @@
   width: 100%;
 }
 
+.product-category .error {
+  margin-top: 150px;
+}
+
 .product-category .product-overview .info{
   width: 327px;
 }
